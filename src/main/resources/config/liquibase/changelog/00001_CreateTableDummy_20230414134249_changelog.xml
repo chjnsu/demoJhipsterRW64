@@ -1,0 +1,16 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.12.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="nvnam (generated)" id="1681479771952-3">
+        <createTable tableName="dummy">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="dummyPK"/>
+            </column>
+            <column name="aut_float" type="FLOAT"/>
+            <column name="name_dummy" type="VARCHAR(50)"/>
+            <column name="some_integer" type="INT"/>
+            <column name="some_dum_value" type="VARCHAR(50)"/>
+            <column name="some_float" type="FLOAT"/>
+            <column name="some_int" type="INT"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
