@@ -98,4 +98,28 @@ public class Dummy implements Serializable {
     public void setAutFloat(Float autFloat) {
         this.autFloat = autFloat;
     }
+
+    @Override
+    public String toString() {
+        return (
+            "Dummy{" +
+            "id=" +
+            id +
+            ", name='" +
+            name +
+            '\'' +
+            ", someDumValue='" +
+            someDumValue +
+            '\'' +
+            ", someInt=" +
+            someInt +
+            ", somInteger=" +
+            somInteger +
+            ", someFloat=" +
+            someFloat +
+            ", autFloat=" +
+            autFloat +
+            '}'
+        );
+    }
 }
