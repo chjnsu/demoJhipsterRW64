@@ -807,7 +807,7 @@
                                 <url>jdbc:mysql://localhost:3306/railway64</url>
                                 <defaultSchemaName></defaultSchemaName>
                                 <username>root</username>
-                                <password>abc13579</password>
+                                <password>1234</password>
                                 <referenceUrl>hibernate:spring:com.vti.edu.railway.domain?dialect=org.hibernate.dialect.MySQL8Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
                                 <verbose>true</verbose>
                                 <logging>debug</logging>
@@ -902,7 +902,7 @@
                                 <url>jdbc:mysql://localhost:3306/railway64</url>
                                 <defaultSchemaName></defaultSchemaName>
                                 <username>root</username>
-                                <password>abc13579</password>
+                                <password>1234</password>
                                 <referenceUrl>hibernate:spring:com.vti.edu.railway.domain?dialect=org.hibernate.dialect.MySQL8Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
                                 <verbose>true</verbose>
                                 <logging>debug</logging>
