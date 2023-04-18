@@ -122,4 +122,17 @@ public class Dummy implements Serializable {
             '}'
         );
     }
+
+    @Override
+    public String toString() {
+        return "Dummy{" +
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", someDumValue='" + someDumValue + '\'' +
+            ", someInt=" + someInt +
+            ", somInteger=" + somInteger +
+            ", someFloat=" + someFloat +
+            ", autFloat=" + autFloat +
+            '}';
+    }
 }
