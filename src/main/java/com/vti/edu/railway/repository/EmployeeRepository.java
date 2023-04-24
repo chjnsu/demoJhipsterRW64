@@ -22,4 +22,18 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
     // Naming Query
     public List<Employee> findByFirstNameStartingWith(String s);
+
+    // Naming Query
+    // Select * from Employee
+    // where firstName = firstName
+    public List<Employee> findByFirstName(String firstName);
+
+    public List<Employee> findBySalary(Long salary);
+
+    // Greater than / Small Less
+    public List<Employee> findBySalaryGreaterThan(Long salary);
+
+    public List<Employee> findBySalaryLessThan(Long salary);
+
+    public List<Employee> findBySalaryBetween(Long salary1, Long salary2);
 }

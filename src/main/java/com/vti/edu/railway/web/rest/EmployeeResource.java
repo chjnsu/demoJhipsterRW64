@@ -212,4 +212,32 @@ public class EmployeeResource {
     public List<Employee> customAPI2(@RequestParam(required = false) String firstName) {
         return employeeRepository.findByFirstNameStartingWith(firstName);
     }
+
+    @GetMapping("/employee/findByFirstName")
+    public List<Employee> findByFirstName(@RequestParam(required = false) String firstName) {
+        return employeeRepository.findByFirstName(firstName);
+    }
+
+    @GetMapping("/employee/findBySalaryGreaterThan")
+    public List<Employee> findBySalaryGreaterThan(@RequestParam(required = false) Long salary) {
+        return employeeRepository.findBySalaryGreaterThan(salary);
+    }
+
+    @GetMapping("/employee/findBySalaryLessThan")
+    public List<Employee> findBySalaryLessThan(@RequestParam(required = false) Long salary) {
+        return employeeRepository.findBySalaryLessThan(salary);
+    }
+
+    @GetMapping("/employee/findBySalaryBetween")
+    public List<Employee> findBySalaryBetween(
+        @RequestParam(required = false) Long salaryMin,
+        @RequestParam(required = false) Long salaryMax
+    ) {
+        return employeeRepository.findBySalaryBetween(salaryMin, salaryMax);
+    }
+
+    @GetMapping("/employee/findBySalary")
+    public List<Employee> findBySalary(@RequestParam(required = false) Long salary) {
+        return employeeRepository.findBySalary(salary);
+    }
 }
