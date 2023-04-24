@@ -3,6 +3,7 @@ package com.vti.edu.railway.service.impl;
 import com.vti.edu.railway.domain.Department;
 import com.vti.edu.railway.repository.DepartmentRepository;
 import com.vti.edu.railway.service.DepartmentService;
+import com.vti.edu.railway.service.dto.DepartmentPlusDTO;
 import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
@@ -71,5 +72,10 @@ public class DepartmentServiceImpl implements DepartmentService {
     public void delete(Long id) {
         log.debug("Request to delete Department : {}", id);
         departmentRepository.deleteById(id);
+    }
+
+    @Override
+    public List<DepartmentPlusDTO> customFunction() {
+        return departmentRepository.findAllDepartmentWithLocationDetail();
     }
 }

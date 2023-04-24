@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -202,5 +201,15 @@ public class EmployeeResource {
             .noContent()
             .headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString()))
             .build();
+    }
+
+    @GetMapping("/employee/customAPI-1")
+    public List<Employee> customAPI() {
+        return employeeRepository.findEmployeeFirstNameStartWith();
+    }
+
+    @GetMapping("/employee/customAPI-2")
+    public List<Employee> customAPI2(@RequestParam(required = false) String firstName) {
+        return employeeRepository.findByFirstNameStartingWith(firstName);
     }
 }

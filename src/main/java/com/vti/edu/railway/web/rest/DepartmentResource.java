@@ -3,6 +3,7 @@ package com.vti.edu.railway.web.rest;
 import com.vti.edu.railway.domain.Department;
 import com.vti.edu.railway.repository.DepartmentRepository;
 import com.vti.edu.railway.service.DepartmentService;
+import com.vti.edu.railway.service.dto.DepartmentPlusDTO;
 import com.vti.edu.railway.web.rest.errors.BadRequestAlertException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -170,5 +171,15 @@ public class DepartmentResource {
             .noContent()
             .headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString()))
             .build();
+    }
+
+    @GetMapping("/departments/customAPI")
+    public List<DepartmentPlusDTO> customAPI() {
+        return departmentService.customFunction();
+    }
+
+    @GetMapping("/departments/customAPI-2")
+    public List<DepartmentPlusDTO> customAPI2() {
+        return departmentService.customFunction();
     }
 }

@@ -1,6 +1,7 @@
 package com.vti.edu.railway.service;
 
 import com.vti.edu.railway.domain.Department;
+import com.vti.edu.railway.service.dto.DepartmentPlusDTO;
 import java.util.List;
 import java.util.Optional;
 
@@ -53,4 +54,6 @@ public interface DepartmentService {
      * @param id the id of the entity.
      */
     void delete(Long id);
+
+    List<DepartmentPlusDTO> customFunction();
 }
