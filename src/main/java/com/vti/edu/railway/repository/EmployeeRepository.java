@@ -21,19 +21,31 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     public List<Employee> findEmployeeFirstNameStartWith(@Param("firstName") String firstName);
 
     // Naming Query
+
     public List<Employee> findByFirstNameStartingWith(String s);
 
     // Naming Query
     // Select * from Employee
     // where firstName = firstName
-    public List<Employee> findByFirstName(String firstName);
+    @Query(value = "SELECT e FROM Employee e WHERE e.firstName= :firstName" )
+    public List<Employee> findByFirstName(@Param("firstName")String firstName);
+    @Query("Select e from Employee e " +
+        "where e.salary = :salary")
+    public List<Employee> findBySalary(@Param("salary") Long salary);
 
-    public List<Employee> findBySalary(Long salary);
 
     // Greater than / Small Less
-    public List<Employee> findBySalaryGreaterThan(Long salary);
+    @Query("Select e from Employee e " +
+        "where e.salary > :salary")
+    public List<Employee> findBySalaryGreaterThan(@Param("salary") Long salary);
+    @Query("Select e from Employee e " +
+        "where e.salary < :salary")
+    public List<Employee> findBySalaryLessThan(@Param("salary") Long salary);
 
-    public List<Employee> findBySalaryLessThan(Long salary);
+    @Query("Select e from Employee e " +
+        "where e.salary BETWEEN :salary1 AND :salary2")
+    public List<Employee> findBySalaryBetween(@Param("salary1") Long salary1,@Param("salary2")  Long salary2);
+    public List<Employee> findByDepartment_departmentNameOrderBySalaryAsc(String department);
+    public List<Employee> findByDepartmentDepartmentNameOrderBySalaryDesc(String department);
 
-    public List<Employee> findBySalaryBetween(Long salary1, Long salary2);
 }
