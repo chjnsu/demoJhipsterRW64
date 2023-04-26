@@ -218,10 +218,10 @@ public class EmployeeResource {
         return employeeRepository.findByFirstName(firstName);
     }
 
-    @GetMapping("/employee/findBySalaryGreaterThan")
-    public List<Employee> findBySalaryGreaterThan(@RequestParam(required = false) Long salary) {
-        return employeeRepository.findBySalaryGreaterThan(salary);
-    }
+    //    @GetMapping("/employee/findBySalaryGreaterThan")
+    //    public List<Employee> findBySalaryGreaterThan(@RequestParam(required = false) Long salary) {
+    //        return employeeRepository.findBySalaryGreaterThan(salary);
+    //    }
 
     @GetMapping("/employee/findBySalaryLessThan")
     public List<Employee> findBySalaryLessThan(@RequestParam(required = false) Long salary) {
@@ -239,5 +239,15 @@ public class EmployeeResource {
     @GetMapping("/employee/findBySalary")
     public List<Employee> findBySalary(@RequestParam(required = false) Long salary) {
         return employeeRepository.findBySalary(salary);
+    }
+
+    @GetMapping("/employee/findByDepartmentName-1")
+    public List<Employee> findByDepartmentName1(@RequestParam(required = false) String department) {
+        return employeeRepository.findByDepartment_departmentNameOrderBySalaryAsc(department);
+    }
+
+    @GetMapping("/employee/findByDepartmentName-2")
+    public List<Employee> findByDepartmentName2(@RequestParam(required = false) String department) {
+        return employeeRepository.findByDepartmentDepartmentNameOrderBySalaryDesc(department);
     }
 }

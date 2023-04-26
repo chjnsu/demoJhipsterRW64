@@ -1,5 +1,6 @@
 package com.vti.edu.railway.repository;
 
+import com.vti.edu.railway.domain.Department;
 import com.vti.edu.railway.domain.Employee;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -28,12 +29,32 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     // where firstName = firstName
     public List<Employee> findByFirstName(String firstName);
 
-    public List<Employee> findBySalary(Long salary);
+    @Query("Select e from Employee e " + "where e.salary = :salary")
+    public List<Employee> findBySalary(@Param("salary") Long salary);
 
     // Greater than / Small Less
-    public List<Employee> findBySalaryGreaterThan(Long salary);
+    //    @Query("Select e from Employee e " +
+    //        "where e.salary > :salary" +
+    //        "And e.commission > :commission")
+    public List<Employee> findBySalaryGreaterThanAndCommissionPctGreaterThan(Long salary, Long commissionPct);
+
+    //    @Query("Select e from Employee e " +
+    //        "where e.salary > :salary" +
+    //        "or e.commission > :commission")
+    public List<Employee> findBySalaryGreaterThanOrCommissionPctGreaterThan(Long salary, Long commissionPct);
 
     public List<Employee> findBySalaryLessThan(Long salary);
 
+    @Query("")
     public List<Employee> findBySalaryBetween(Long salary1, Long salary2);
+
+    // Virtual
+    // NamingQuery
+    // select * from Employee e where department = :department
+
+    public List<Employee> findByDepartment(Department department);
+
+    public List<Employee> findByDepartment_departmentNameOrderBySalaryAsc(String department);
+
+    public List<Employee> findByDepartmentDepartmentNameOrderBySalaryDesc(String department);
 }
