@@ -15,10 +15,12 @@ import org.springframework.stereotype.Repository;
 public interface DepartmentRepository extends JpaRepository<Department, Long> {
     @Query(
         nativeQuery = false,
-        value = "SELECT new com.vti.edu.railway.service.dto.DepartmentPlusDTO( d.id, d.departmentName as departmentName, concat(l.city, ' - ', c.countryName,r.regionName) as address) FROM Department d\n" +
+        value = "SELECT new com.vti.edu.railway.service.dto.DepartmentPlusDTO( d.id, d.departmentNameNew as departmentName, concat(l.city, ' - ', c.countryName,r.regionName) as address) " +
+            "FROM Department d\n" +
         "LEFT JOIN Location l ON d.location.id = l.id\n" +
         "LEFT JOIN Country c ON l.country.id = c.id\n" +
         "LEFT JOIN Region r ON c.region.id = r.id"
     )
     List<DepartmentPlusDTO> findAllDepartmentWithLocationDetail(); // Xong cau lejenh truy van SQL
+    // HQL
 }

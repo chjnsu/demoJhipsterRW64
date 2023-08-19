@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * A Department.
@@ -23,8 +24,9 @@ public class Department implements Serializable {
     private Long id;
 
     @NotNull
-    @Column(name = "department_name", nullable = false)
-    private String departmentName;
+    @Column(name = "department_name_new", nullable = false, length = 100)
+    @Size(min = 3, max = 100)
+    private String departmentNameNew;
 
     @JsonIgnoreProperties(value = { "country" }, allowSetters = true)
     @OneToOne
@@ -54,17 +56,17 @@ public class Department implements Serializable {
         this.id = id;
     }
 
-    public String getDepartmentName() {
-        return this.departmentName;
+    public String getDepartmentNameNew() {
+        return this.departmentNameNew;
     }
 
     public Department departmentName(String departmentName) {
-        this.setDepartmentName(departmentName);
+        this.setDepartmentNameNew(departmentName);
         return this;
     }
 
-    public void setDepartmentName(String departmentName) {
-        this.departmentName = departmentName;
+    public void setDepartmentNameNew(String departmentNameNew) {
+        this.departmentNameNew = departmentNameNew;
     }
 
     public Location getLocation() {
@@ -135,7 +137,7 @@ public class Department implements Serializable {
     public String toString() {
         return "Department{" +
             "id=" + getId() +
-            ", departmentName='" + getDepartmentName() + "'" +
+            ", departmentName='" + getDepartmentNameNew() + "'" +
             "}";
     }
 }

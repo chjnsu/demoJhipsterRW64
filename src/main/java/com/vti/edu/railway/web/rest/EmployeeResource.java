@@ -243,11 +243,11 @@ public class EmployeeResource {
 
     @GetMapping("/employee/findByDepartmentName-1")
     public List<Employee> findByDepartmentName1(@RequestParam(required = false) String department) {
-        return employeeRepository.findByDepartment_departmentNameOrderBySalaryAsc(department);
+        return employeeRepository.findByDepartment_departmentNameNewOrderBySalaryAsc(department);
     }
 
     @GetMapping("/employee/findByDepartmentName-2")
     public List<Employee> findByDepartmentName2(@RequestParam(required = false) String department) {
-        return employeeRepository.findByDepartmentDepartmentNameOrderBySalaryDesc(department);
+        return employeeRepository.findByDepartmentDepartmentNameNewOrderBySalaryDesc(department);
     }
 }

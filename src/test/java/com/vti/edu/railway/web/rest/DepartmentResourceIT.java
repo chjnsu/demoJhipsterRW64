@@ -89,7 +89,7 @@ class DepartmentResourceIT {
         List<Department> departmentList = departmentRepository.findAll();
         assertThat(departmentList).hasSize(databaseSizeBeforeCreate + 1);
         Department testDepartment = departmentList.get(departmentList.size() - 1);
-        assertThat(testDepartment.getDepartmentName()).isEqualTo(DEFAULT_DEPARTMENT_NAME);
+        assertThat(testDepartment.getDepartmentNameNew()).isEqualTo(DEFAULT_DEPARTMENT_NAME);
     }
 
     @Test
@@ -115,7 +115,7 @@ class DepartmentResourceIT {
     void checkDepartmentNameIsRequired() throws Exception {
         int databaseSizeBeforeTest = departmentRepository.findAll().size();
         // set the field null
-        department.setDepartmentName(null);
+        department.setDepartmentNameNew(null);
 
         // Create the Department, which fails.
 
@@ -190,7 +190,7 @@ class DepartmentResourceIT {
         List<Department> departmentList = departmentRepository.findAll();
         assertThat(departmentList).hasSize(databaseSizeBeforeUpdate);
         Department testDepartment = departmentList.get(departmentList.size() - 1);
-        assertThat(testDepartment.getDepartmentName()).isEqualTo(UPDATED_DEPARTMENT_NAME);
+        assertThat(testDepartment.getDepartmentNameNew()).isEqualTo(UPDATED_DEPARTMENT_NAME);
     }
 
     @Test
@@ -273,7 +273,7 @@ class DepartmentResourceIT {
         List<Department> departmentList = departmentRepository.findAll();
         assertThat(departmentList).hasSize(databaseSizeBeforeUpdate);
         Department testDepartment = departmentList.get(departmentList.size() - 1);
-        assertThat(testDepartment.getDepartmentName()).isEqualTo(DEFAULT_DEPARTMENT_NAME);
+        assertThat(testDepartment.getDepartmentNameNew()).isEqualTo(DEFAULT_DEPARTMENT_NAME);
     }
 
     @Test
@@ -302,7 +302,7 @@ class DepartmentResourceIT {
         List<Department> departmentList = departmentRepository.findAll();
         assertThat(departmentList).hasSize(databaseSizeBeforeUpdate);
         Department testDepartment = departmentList.get(departmentList.size() - 1);
-        assertThat(testDepartment.getDepartmentName()).isEqualTo(UPDATED_DEPARTMENT_NAME);
+        assertThat(testDepartment.getDepartmentNameNew()).isEqualTo(UPDATED_DEPARTMENT_NAME);
     }
 
     @Test

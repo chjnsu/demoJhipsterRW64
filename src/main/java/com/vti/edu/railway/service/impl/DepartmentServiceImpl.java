@@ -45,8 +45,8 @@ public class DepartmentServiceImpl implements DepartmentService {
         return departmentRepository
             .findById(department.getId())
             .map(existingDepartment -> {
-                if (department.getDepartmentName() != null) {
-                    existingDepartment.setDepartmentName(department.getDepartmentName());
+                if (department.getDepartmentNameNew() != null) {
+                    existingDepartment.setDepartmentNameNew(department.getDepartmentNameNew());
                 }
 
                 return existingDepartment;

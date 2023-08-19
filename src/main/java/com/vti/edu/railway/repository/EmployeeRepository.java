@@ -54,7 +54,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
     public List<Employee> findByDepartment(Department department);
 
-    public List<Employee> findByDepartment_departmentNameOrderBySalaryAsc(String department);
+    public List<Employee> findByDepartment_departmentNameNewOrderBySalaryAsc(String department); // Naming query
 
-    public List<Employee> findByDepartmentDepartmentNameOrderBySalaryDesc(String department);
+    public List<Employee> findByDepartmentDepartmentNameNewOrderBySalaryDesc(String department);
 }
